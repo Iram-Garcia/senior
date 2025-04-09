@@ -49,7 +49,7 @@ A full-stack application that processes and displays images received from an ESP
    
    # Unix/MacOS
    source venv/bin/activate
-   ```bash
+   ```
 
 2. Install dependencies:
 

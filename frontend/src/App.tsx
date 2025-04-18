@@ -1,10 +1,11 @@
 import React from 'react'
 import { ImageViewer } from './components/ImageViewer'
+import Home from './components/home'
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <ImageViewer />
+      <Home />
     </div>
   )
 }

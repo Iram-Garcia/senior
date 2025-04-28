@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faParking, faCog, faSignOutAlt, faUnlink, faLink, faSyncAlt, 
@@ -8,6 +9,7 @@ import {
 const Home: React.FC = () => {
   const [connected, setConnected] = useState(false);
   const [lastCheckedTime, setLastCheckedTime] = useState<string>('');
+  const navigate = useNavigate();
 
   const toggleConnection = () => {
     setConnected(!connected);
@@ -24,6 +26,10 @@ const Home: React.FC = () => {
       hour12: false
     });
     setLastCheckedTime(timeString);
+  };
+
+  const navigateToImageViewer = () => {
+    navigate('/imageviewer');
   };
 
   return (
@@ -80,7 +86,7 @@ const Home: React.FC = () => {
             <h3>Parking Tickets</h3>
             <p>Issue and manage parking tickets</p>
           </div>
-          <div className="action-card">
+          <div className="action-card" onClick={navigateToImageViewer}>
             <FontAwesomeIcon icon={faChartLine} className="action-icon" />
             <h3>Reports</h3>
             <p>Generate and view occupancy and revenue reports</p>

@@ -4,6 +4,7 @@ import {
   faParking, faCog, faSignOutAlt, faUnlink, faLink, faSyncAlt, 
   faTimes, faCar, faTicketAlt, faChartLine, faMapMarkedAlt 
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const [connected, setConnected] = useState(false);
@@ -74,6 +75,11 @@ const Home: React.FC = () => {
             <FontAwesomeIcon icon={faCar} className="action-icon" />
             <h3>Manage Vehicles</h3>
             <p>Register new vehicles or update existing records</p>
+            <Link to="/manage-vehicles">
+              <button className="px-4 py-2 bg-blue-500 text-white rounded mt-2">
+                Go to Manage Vehicles
+              </button>
+            </Link>
           </div>
           <div className="action-card">
             <FontAwesomeIcon icon={faTicketAlt} className="action-icon" />

@@ -1,13 +1,15 @@
-import React from 'react'
-import { ImageViewer } from './components/ImageViewer'
-import Home from './components/home'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/home';
+import ManageVehicles from './components/ManageVehicles';
 
-function App() {
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <Home />
-    </div>
-  )
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/manage-vehicles" element={<ManageVehicles />} />
+    </Routes>
+  </Router>
+);
 
-export default App 
+export default App;
